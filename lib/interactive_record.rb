@@ -39,7 +39,7 @@ class InteractiveRecord
   end
 
   def table_name_for_insert
-    # we uses this to abstract the table name and use our save method.
+# we uses this to abstract the table name and use our save method.
     self.class.table_name
   end
 

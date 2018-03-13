@@ -8,7 +8,7 @@ class InteractiveRecord
     self.to_s.downcase.pluralize
   end
 
-#Query a table for the name of its colums => return the result as a hash
+# Query a table for the name of its colums => return the result as a hash
   def self.column_names
     DB[:conn].results_as_hash = true
 

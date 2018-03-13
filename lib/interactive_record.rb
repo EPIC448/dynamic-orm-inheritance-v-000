@@ -25,6 +25,8 @@ class InteractiveRecord
   end
 
   def initialize(options={})
+    # initialize method take a hash and uses .send to interpolate the name of each key as method
+    #  that we set to that key value.
     options.each do |property, value|
       self.send("#{property}=", value)
     end

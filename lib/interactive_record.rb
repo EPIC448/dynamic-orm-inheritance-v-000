@@ -44,6 +44,8 @@ class InteractiveRecord
   end
 
   def values_for_insert
+#  we grab the values to insert by grabbing the values of that instance's attr_reader
+# name of attr_accessor is derived from column_names
     values = []
     self.class.column_names.each do |col_name|
       values << "'#{send(col_name)}'" unless send(col_name).nil?

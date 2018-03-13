@@ -2,7 +2,7 @@ require_relative "../config/environment.rb"
 require 'active_support/inflector'
 
 class InteractiveRecord
-
+  # notes: grabs us the table name we want to query for column names,
   def self.table_name
     self.to_s.downcase.pluralize
   end

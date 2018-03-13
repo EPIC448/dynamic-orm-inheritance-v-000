@@ -53,7 +53,7 @@ class InteractiveRecord
 
   def col_names_for_insert
 # save our Ruby object, we should not include the id column name or insert a value for the id column. 
-# Therefore, we need to remove "id" from the array of column names returned from the method
+# Therefore, we need to remove "id" from the array of column names returned from the method because our method auto-include id for us
     self.class.column_names.delete_if {|col| col == "id"}.join(", ")
   end
 

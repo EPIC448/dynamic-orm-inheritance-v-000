@@ -19,6 +19,7 @@ class InteractiveRecord
 # iterate over the hash and GRIP only the column_names in the hash
       column_names << row["name"]
     end
+    
 # removes at nil value in out return hash code with compact
     column_names.compact
   end

@@ -16,10 +16,10 @@ class InteractiveRecord
     table_info = DB[:conn].execute(sql)
     column_names = []
     table_info.each do |row|
-# iterate over the hash and GRIP only the column_names in the hash 
+# iterate over the hash and GRIP only the column_names in the hash
       column_names << row["name"]
     end
-# removes at nil value in out code
+# removes at nil value in out return hash code with compact
     column_names.compact
   end
 

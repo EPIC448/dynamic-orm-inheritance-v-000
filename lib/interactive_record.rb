@@ -8,10 +8,10 @@ class InteractiveRecord
     self.to_s.downcase.pluralize
   end
 
-# Query a table for the name of its colums => return the result as a hash
   def self.column_names
     DB[:conn].results_as_hash = true
 
+    # Query a table for the name of its colums => return the result as a hash
     sql = "pragma table_info('#{table_name}')"
 
     table_info = DB[:conn].execute(sql)

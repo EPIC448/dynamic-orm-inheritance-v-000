@@ -2,8 +2,7 @@ require_relative "../config/environment.rb"
 require 'active_support/inflector'
 
 class InteractiveRecord
-
-  # notes: grabs us the table name we want to query for column names,
+# notes: grabs us the table name we want to query for column names,
   def self.table_name
     self.to_s.downcase.pluralize
   end
@@ -11,16 +10,16 @@ class InteractiveRecord
   def self.column_names
     DB[:conn].results_as_hash = true
 
-    # Query a table for the name of its colums => return the result as a hash
+# Query a table for the name of its colums => return the result as a hash
     sql = "pragma table_info('#{table_name}')"
 
     table_info = DB[:conn].execute(sql)
     column_names = []
     table_info.each do |row|
-      # iterate over the hash and GRIP only the column_names in the hash 
+# iterate over the hash and GRIP only the column_names in the hash 
       column_names << row["name"]
     end
-    # removes at nil value in out code
+# removes at nil value in out code
     column_names.compact
   end
 
